@@ -1,3 +1,3 @@
 puts "Ingrese su nombre: "
-nombre = gets
-puts "Hola " + nombre + "Como estás?"
+nombre = gets.chomp
+puts "Hola " + nombre + " ,Como estás?"

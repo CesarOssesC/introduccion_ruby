@@ -1,6 +1,6 @@
 puts "Ingresa tu nombre, edad, nivel"
 
-persona = gets
+persona = gets.chomp
 
 nombre = persona.split(", ")[0].to_s
 edad = persona.split(", ")[1].to_s
