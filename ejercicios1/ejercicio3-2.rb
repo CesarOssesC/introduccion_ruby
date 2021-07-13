@@ -1,8 +1,9 @@
 a = rand(0-100)
 
 numero = 0
+puts "Adivina el número entre el 1 y el 100!"
 while numero != a
-    puts "Adivina el número entre el 1 y el 100!"
+    
     numero = gets.chomp.to_i
 
     if numero < a then
