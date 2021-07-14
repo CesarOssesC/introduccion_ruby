@@ -3,7 +3,7 @@ valor = 0
 suma= 0
 
 puts "Este programa calculará automaticamente el total de tus ventas diarias \ny el promedio por ventas."
-puts "Ingresa tus ventas, para terminar escribe \"calcular\""
+puts "Ingresa tus ventas, para terminar escribe \"-1\""
 
 while valor != "-1"
     valor = gets.chomp
