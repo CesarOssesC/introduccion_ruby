@@ -70,7 +70,7 @@ pizzas = [
 
 for pizza in pizzas
     puts "Nombre: #{pizza[:nombre]} \nIngredientes: #{pizza[:ingredientes]} \nPrecio: #{pizza[:precio]}\n"
-    
+    puts ""
 end
 puts "===="
 
