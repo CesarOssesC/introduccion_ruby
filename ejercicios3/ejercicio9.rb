@@ -87,7 +87,7 @@ while comando != "salir"
         for u in pizzas
             if nombre_filtro == u[:nombre]
                 encontramos_la_pizza = true
-                puts "#{u[:ingredientes]} \t precio: #{u[:precio]}"
+                puts "Ingredientes: #{u[:ingredientes]} \t precio: #{u[:precio]}"
             end
         end
         if encontramos_la_pizza == false
