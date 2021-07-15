@@ -30,7 +30,7 @@ while palabra_guiones != palabra and !sin_intentos
 end
 
 if palabra_guiones == palabra
-    puts "Felicitaciones Adivinaste!"
+    puts "\nFelicitaciones Adivinaste! La palabra era: #{palabra_secreta}"
 else
     puts "Perdiste!"
 end

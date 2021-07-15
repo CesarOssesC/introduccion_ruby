@@ -68,10 +68,33 @@ pizzas = [
     pizza1, pizza2, pizza3, pizza4, pizza5, pizza6, pizza7, pizza8, pizza9, pizza10, pizza11
 ]
 
+# for pizza in pizzas
+#     puts "Nombre: #{pizza[:nombre]} \nIngredientes: #{pizza[:ingredientes]} \nPrecio: #{pizza[:precio]}\n"
+#     puts ""
+# end
+# puts "===="
 for pizza in pizzas
-    puts "Nombre: #{pizza[:nombre]} \nIngredientes: #{pizza[:ingredientes]} \nPrecio: #{pizza[:precio]}\n"
-    puts ""
+    puts "Nombre: #{pizza[:nombre]}"
 end
-puts "===="
-
+puts "====================================="
+puts "Para ver los ingredientes y precio ingresa el nombre de la pizza"
+comando =""
+while comando != "salir"
+    nombre_filtro = gets.chomp
+    encontramos_la_pizza = false
+    comando = nombre_filtro
+    if comando != "salir"
+        for u in pizzas
+            if nombre_filtro == u[:nombre]
+                encontramos_la_pizza = true
+                puts "#{u[:ingredientes]} \t pass: #{u[:precio]}"
+            end
+        end
+        if encontramos_la_pizza == false
+            puts "Esa pizza no existe"
+            
+        end
+    end
+    
+end
 

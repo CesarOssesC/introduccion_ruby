@@ -1,63 +1,51 @@
-serie_1 = {
-    nombre: "Sweet Tooth",
-    formato: "Serie",
-    temporadas: "1",
-    duracion: "8 Capítulos",
-    sinopsis: "En un mundo postapocalíptico, Gus, un niño mitad humano y mitad ciervo, busca un nuevo comienzo junto a Jeppers, un vagabundo con una vida solitaria.",
-    genero: "Drama",
-}
+require 'securerandom'
 
-serie_2 = {
-    nombre: "Resident Evil",
-    formato: "Serie",
-    temporadas: "1",
-    duracion: "8 Capítulos",
-    sinopsis: "Años después de los escalofriantes eventos en Raccoon City, Claire y Leon se ven envueltos en una siniestra conspiración cuando un ataque viral arrasa la Casa Blanca",
-    genero: "Drama",
-}
 
-serie_3 = {
-    nombre: "Atypical",
-    formato: "Serie",
-    temporadas: "4",
-    duracion: "8 Capítulos",
-    sinopsis: "Un adolescente con autismo está listo para enamorarse. Para comenzar a salir y encontrar el amor, necesita ser más independiente.",
-    genero: "Drama",
-}
+comando = ""
+lista_usuarios = []
+puts "Ingrese los nombres del trabajador para generar contraseñas"
+puts "Si desea cerrar el programa escirba \"salir\""
 
-serie_4 = {
-    nombre: "The Witcher",
-    formato: "Serie",
-    temporadas: "1",
-    duracion: "8 Capítulos",
-    sinopsis: "El brujo Geralt, un cazador de monstruos, trata de encontrar su lugar en un mundo en el que las personas suelen ser más malvadas que las bestias.",
-    genero: "Acción",
-}
-
-serie_5 = {
-    nombre: "Anne with an E",
-    formato: "serie",
-    temporadas: "3",
-    duracion: "8 Capítulos",
-    sinopsis: "Una huerfanita con una imaginación sin escalas termina por error en la casa de una solterona y su hermano. Basada en la inolvidable novela.",
-    genero: "Drama",
-}
-
-#para poder manejar los datos, creamos una lista
-
-series= [
-    serie_1, serie_2, serie_3, serie_4, serie_5
-]
-
-for serie in series
-    puts "Nombre: #{serie[:nombre]} \t Formato: #{serie[:formato]}"
+while comando != "salir"
+    puts "Ingrese el nombre del Trabajador"
+    nombre_usuario = gets.chomp
+    comando = nombre_usuario
+    if comando != "salir"
+        password = SecureRandom.alphanumeric(10)
+        usuario_hash = {nombre: nombre_usuario, pass: password}
+        lista_usuarios << usuario_hash
+        puts "Registro Guardado"
+        #puts "nombre: #{usuario_hash[:nombre]} \t pass: #{usuario_hash[:password]}"
+    end
     
 end
-puts "===="
+puts "===\t==="
+for usuario in lista_usuarios
+    puts "#{usuario[:nombre]} \t #{usuario[:pass]}"
+end
 
-# # puts "Nombre: #{serie_1[:nombre]} \t Formato: #{serie_1[:formato]}"
-# # puts "Nombre: #{serie_2[:nombre]} \t Formato: #{serie_2[:formato]}"
-# # puts "Nombre: #{serie_3[:nombre]} \t Formato: #{serie_3[:formato]}"
-# # puts "Nombre: #{serie_4[:nombre]} \t Formato: #{serie_4[:formato]}"
+#File.write("trabajadores_pass.txt", lista_usuarios)
 
 
+comando = ""
+puts "Ingrese el nombre del trabajador para conocer sus datos"
+puts "Escribir salir para cerrar"
+
+while comando != "salir"
+    nombre_filtro = gets.chomp
+    encontramos_al_trabajador = false
+    comando = nombre_filtro
+    if comando != "salir"
+        for u in lista_usuarios
+            if nombre_filtro == u[:nombre]
+                encontramos_al_trabajador = true
+                puts "#{u[:nombre]} \t pass: #{u[:pass]}"
+            end
+        end
+        if encontramos_al_trabajador == false
+            puts "No se encontró el trabajador"
+            
+        end
+    end
+    
+end
