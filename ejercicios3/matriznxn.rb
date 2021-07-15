@@ -29,9 +29,9 @@ while n > 0
         for columnas in 0..(n-1)
             
             if filas+columnas == (n-1)
-                print "X"
+                print "|X|"
             else
-                print "_"
+                print "|_|"
             end
         end
         puts 
