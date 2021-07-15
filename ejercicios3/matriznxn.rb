@@ -21,7 +21,7 @@ puts "Escribe un número para el tamaño de la matriz"
 puts "Escribe 0 para terminar el programa"
 
 n=1
-while n != 0
+while n > 0
     n = gets.chomp.to_i
 
     for filas in 0..(n-1)
@@ -36,7 +36,9 @@ while n != 0
         end
         puts 
     end
-    puts "========================================================="
-    puts "Ingresa otro tamaño o escribe 0 para terminar el programa"
-
+    if n != 0 
+        puts "========================================================="
+        puts "Ingresa otro tamaño o escribe 0 para terminar el programa"
+    end
 end
+    
