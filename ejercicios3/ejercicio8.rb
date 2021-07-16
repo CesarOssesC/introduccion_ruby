@@ -1,5 +1,5 @@
 
-lista_palabras = ["ruby", "curso", "telefono", "computador", "teams", "visualcode", "rubyonrails", "github", "ubuntu", "profesor", "codigo"]
+lista_palabras = ["ruby", "desarrollador", "programa", "computador", "windows", "visualcode", "rubyonrails", "github", "ubuntu", "profesor", "codigo"]
 palabra_secreta = lista_palabras[rand(lista_palabras.length)]
 palabra = palabra_secreta.split("")
 palabra_guiones= ["_"]*palabra_secreta.length
@@ -9,7 +9,10 @@ intentos_maximos = 5
 sin_intentos = false
 
 
-puts "Adivina la Palabra Secreta"
+puts "Adivina la palabra secreta (Tienen que ver con el curso)"
+puts "Escribe una letra para ir revelando la palabra"
+puts "Tienes 5 vidas por letra\n"
+
 while palabra_guiones != palabra and !sin_intentos
     print palabra_guiones
     letra_encontrada = false 
@@ -23,6 +26,7 @@ while palabra_guiones != palabra and !sin_intentos
         end
         if letra_encontrada == false
         intentos += 1
+        puts "Te quedan #{5-intentos} vidas"
         end
     else
         sin_intentos = true
@@ -32,5 +36,5 @@ end
 if palabra_guiones == palabra
     puts "\nFelicitaciones Adivinaste! La palabra era: #{palabra_secreta}"
 else
-    puts "Perdiste!"
+    puts "\nPerdiste! te qudaste sin vidas."
 end
